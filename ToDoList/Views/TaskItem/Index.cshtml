@@ -22,15 +22,15 @@
                 <td>@task.Status</td>
                 <td>@task.TaskCreatedDate</td>
                 <td>@task.TaskCompletedDate</td>
-                @* <td>
-                    <a asp-action="Edit" asp-route-id="@cliente.ClienteId" class="btn btn-primary">Editar</a>
-                    <a asp-action="Delete" asp-route-id="@cliente.ClienteId" class="btn btn-danger">Deletar</a>
-                </td> *@
+                <td>
+                    <a asp-action="Edit" asp-route-id="@task.TaskId" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@task.TaskId" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
 
-@* <p>
-    <a asp-action="Create" class="btn btn-success">Adicionar Cliente</a>
-</p> *@
+<p>
+    <a asp-action="Create" class="btn btn-success">Add New Task</a>
+</p>
