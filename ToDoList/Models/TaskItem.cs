@@ -15,7 +15,7 @@ namespace ToDoList.Models
         public DateTime TaskCreatedDate { get; set; } = DateTime.Now;
 
         [Display(Name = "Completed Date")]
-        public DateTime TaskCompletedDate { get; set;}
+        public DateTime TaskCompletedDate { get; set;} 
 
         public enum TaskStatus
         {
