@@ -21,7 +21,14 @@
                 <td>@task.TaskName</td>
                 <td>@task.Status</td>
                 <td>@task.TaskCreatedDate</td>
-                <td>@task.TaskCompletedDate</td>
+                @if (task.Status == TaskItem.TaskStatus.ToDo)
+                {
+                    <td></td>
+                } else
+                {
+                    <td>@task.TaskCompletedDate</td>
+                }
+               @*  <td>@task.TaskCompletedDate</td> *@
                 <td>
                     <a asp-action="Details" asp-route-id="@task.TaskId" class="btn btn-primary">Details</a>
                     <a asp-action="Edit" asp-route-id="@task.TaskId" class="btn btn-primary">Edit</a>
