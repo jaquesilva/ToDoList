@@ -29,7 +29,7 @@ namespace ToDoList.Controllers
 
             if (ModelState.IsValid)
             {
-                task.TaskId = _tasks.Count > 0 ? _tasks.Max(c => c.TaskId) + 1 : 1;
+                task.TaskId = _tasks.Count > 0 ? _tasks.Max(t => t.TaskId) + 1 : 1;
                 _tasks.Add(task);
             }
             return RedirectToAction("Index");
@@ -60,6 +60,15 @@ namespace ToDoList.Controllers
                 return RedirectToAction("Index");
             }
             return View(task);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var task = _tasks.FirstOrDefault(t => t.TaskId == id);
+            if (task == null)
+                return NotFound();
+            _tasks.Remove(task);
+            return RedirectToAction("Index");
         }
     }
 }
