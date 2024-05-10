@@ -2,30 +2,25 @@
 
 namespace ToDoList.Models
 {
-    public class Task
+    public class TaskItem
     {
         public int TaskId { get; set; }
 
         [Display(Name = "Task Name")]
         public string? TaskName { get; set; }
-
+        
         public TaskStatus Status { get; set; }
 
         [Display(Name = "Created Date")]
-        public DateTime CreatedDate { get; set; }
+        public DateTime TaskCreatedDate { get; set; } = DateTime.Now;
 
-        [Display(Name = "ModifiedDate")]
-        public DateTime ModifiedDate { get; set;}
+        [Display(Name = "Completed Date")]
+        public DateTime TaskCompletedDate { get; set;}
 
         public enum TaskStatus
         {
             ToDo,
             Done
         }
-
-
-
-
-
     }
 }
