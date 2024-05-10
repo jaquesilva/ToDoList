@@ -34,5 +34,32 @@ namespace ToDoList.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        [HttpGet] //anotação de PEGAR
+        public IActionResult Edit(int id)
+        {
+            var task = _tasks.FirstOrDefault(t => t.TaskId == id);
+            if (task == null)
+            {
+                return NotFound();
+            }
+
+            return View(task);
+        }
+
+        [HttpPost] //Anotação de ENVIAR
+        public IActionResult Edit(TaskItem task)
+        {
+            if (ModelState.IsValid)
+            {
+                var existingTaskItem = _tasks.FirstOrDefault(t => t.TaskId == task.TaskId);
+                if (existingTaskItem != null)
+                {
+                    existingTaskItem.TaskName = task.TaskName;
+                }
+                return RedirectToAction("Index");
+            }
+            return View(task);
+        }
     }
 }
