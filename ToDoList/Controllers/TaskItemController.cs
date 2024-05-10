@@ -70,5 +70,15 @@ namespace ToDoList.Controllers
             _tasks.Remove(task);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Details(int id)
+        {
+
+            var task = _tasks.FirstOrDefault(t => t.TaskId == id);
+            if (task == null)
+                return NotFound();
+
+            return View(task);
+        }
     }
 }

@@ -1,0 +1,19 @@
+﻿@model TaskItem
+
+<h1>Task Details</h1>
+
+Id: @Model.TaskId
+<br/>
+Task Name: @Model.TaskName
+<br/>
+Status: @Model.Status
+<br/>
+Created Date: @Model.TaskCreatedDate
+<br/>
+Completed Date: @Model.TaskCompletedDate
+<br/>
+<br/>
+<a asp-action="Delete" asp-route-id="@Model.TaskId" class="btn btn-danger">Delete</a>
+<a asp-action="Index" class="btn btn-secondary">Back</a>
+
+

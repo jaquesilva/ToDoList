@@ -23,6 +23,7 @@
                 <td>@task.TaskCreatedDate</td>
                 <td>@task.TaskCompletedDate</td>
                 <td>
+                    <a asp-action="Details" asp-route-id="@task.TaskId" class="btn btn-primary">Details</a>
                     <a asp-action="Edit" asp-route-id="@task.TaskId" class="btn btn-primary">Edit</a>
                     <a asp-action="Delete" asp-route-id="@task.TaskId" class="btn btn-danger">Delete</a>
                 </td>
