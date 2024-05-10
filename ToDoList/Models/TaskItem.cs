@@ -8,8 +8,8 @@ namespace ToDoList.Models
 
         [Display(Name = "Task Name")]
         public string? TaskName { get; set; }
-        
-        public TaskStatus Status { get; set; }
+
+        public TaskStatus Status { get; set; } = TaskStatus.ToDo;
 
         [Display(Name = "Created Date")]
         public DateTime TaskCreatedDate { get; set; } = DateTime.Now;
@@ -19,8 +19,8 @@ namespace ToDoList.Models
 
         public enum TaskStatus
         {
-            ToDo,
-            Done
+            Done,
+            ToDo
         }
     }
 }
