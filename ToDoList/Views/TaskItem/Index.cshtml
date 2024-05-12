@@ -25,13 +25,15 @@
                 @if (task.Status == TaskItem.TaskStatus.ToDo)
                 {
                     <td>
-                        <form method="post" asp-action="" asp-route-id="@task.TaskId">
+                        <form method="post" asp-action="CompletedTask" asp-route-id="@task.TaskId">
                             <button type="submit" class="btn btn-success">Complete Task</button>
                         </form>
                     </td>
+                    <td></td>
                 } else
                 {
                     <td>@task.TaskCompletedDate</td>
+                    <td></td>
                 }
                
                 <td>

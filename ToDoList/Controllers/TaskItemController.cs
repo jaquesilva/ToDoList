@@ -80,5 +80,20 @@ namespace ToDoList.Controllers
 
             return View(task);
         }
+
+
+        [HttpPost] //Anotação de ENVIAR
+        public IActionResult CompletedTask(int id)
+        {
+            var task = _tasks.FirstOrDefault(t => t.TaskId == id);
+            
+            if (task != null)
+            {
+                task.Status = TaskItem.TaskStatus.Done;
+                task.TaskCompletedDate = DateTime.Now;
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }
