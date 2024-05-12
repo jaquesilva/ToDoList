@@ -6,7 +6,16 @@ namespace ToDoList.Controllers
     {
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "TaskItem");
+            return View();
+        }
+
+        public IActionResult ToDoTasks() {
+            return View();
+        }
+
+        public IActionResult DoneTasks()
+        {
+            return View();
         }
     }
 }
